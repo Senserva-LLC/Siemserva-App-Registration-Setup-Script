@@ -47,7 +47,7 @@ $requiredGraphResourceAccess.ResourceAccess += @{ Id = "aec28ec7-4d02-4e8c-b864-
 $requiredGrants.Add($requiredGraphResourceAccess)
 
 # Create the App registration, use MultipleOrgs so can be multi-tenant scan if desired
-$app = New-MgApplication -DisplayName 'Siemserva Application3' -RequiredResourceAccess $requiredGrants -SignInAudience "AzureADMultipleOrgs"
+$app = New-MgApplication -DisplayName 'Siemserva Application' -RequiredResourceAccess $requiredGrants -SignInAudience "AzureADMultipleOrgs"
 
 
 # Public Client Redirect, Needed to finish the Consent process
@@ -61,3 +61,4 @@ Update-MgApplication -ApplicationId $($app.Id) -PublicClient $publicClient
 Write-Host "Siemserva App Registration Complete!"
 Write-Host "You can use this App Registration with the Siemserva Executable with the following command:"
 Write-Host "./Siemserva.exe --eula-approved true --tenantids $($app.TenantId) --client WamLogin --clientid $($app.AppId) --interactive-login false"
+
