@@ -31,6 +31,7 @@ $requiredGraphResourceAccess.ResourceAccess += @{ Id = "d04bb851-cb7c-4146-97c7-
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "7427e0e9-2fba-42fe-b0c0-848c9e6a8182"; Type = "Scope" } # offline_access
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "37f7f235-527c-4136-accd-4a02d197296e"; Type = "Scope" } # openid
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "572fea84-0151-49b2-9301-11cb16974376"; Type = "Scope" } # Policy.Read.All
+$requiredGraphResourceAccess.ResourceAccess += @{ Id = "a6ff13ac-1851-4993-8ca9-a671d70de2d5"; Type = "Scope" } # Policy.Read.AuthenticationMethod
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "633e0fce-8c58-4cfb-9495-12bbd5a24f7c"; Type = "Scope" } # Policy.Read.ConditionalAccess
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "14dad69e-099b-42c9-810b-d002981feec1"; Type = "Scope" } # profile
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "02e97553-ed7b-43d0-ab3c-f8bace0d040c"; Type = "Scope" } # Reports.Read.All
@@ -61,4 +62,5 @@ Update-MgApplication -ApplicationId $($app.Id) -PublicClient $publicClient
 Write-Host "Siemserva App Registration Complete!"
 Write-Host "You can use this App Registration with the Siemserva Executable with the following command:"
 Write-Host "./Siemserva.exe --eula-approved true --tenantids $($app.TenantId) --client WamLogin --clientid $($app.AppId) --interactive-login false"
+
 
