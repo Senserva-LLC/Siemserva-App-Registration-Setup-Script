@@ -23,6 +23,7 @@ $requiredGraphResourceAccess.ResourceAppId = "00000003-0000-0000-c000-0000000000
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "e4c9e354-4dc5-45b8-9e7c-e1393b0b1a20"; Type = "Scope" } # AuditLog.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "f1493658-876a-4c87-8fa7-edb559b3476a"; Type = "Scope" } # DeviceManagementConfiguration.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "314874da-47d6-4978-88dc-cf0d37f0bb82"; Type = "Scope" } # DeviceManagementManagedDevices.Read.All
+$requiredGraphResourceAccess.ResourceAccess += @{ Id = "49f0cc30-024c-4dfd-ab3e-82e137ee5431"; Type = "Scope" } # DeviceManagementRBAC.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "0e263e50-5827-48a4-b97c-d940288653c7"; Type = "Scope" } # Directory.AccessAsUser.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "06da0dbc-49e2-44d2-8312-53f166ab848a"; Type = "Scope" } # Directory.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "8f6a01e7-0391-4ee5-aa22-a3af122cef27"; Type = "Scope" } # IdentityRiskEvent.Read.All
@@ -62,5 +63,6 @@ Update-MgApplication -ApplicationId $($app.Id) -PublicClient $publicClient
 Write-Host "Siemserva App Registration Complete!"
 Write-Host "You can use this App Registration with the Siemserva Executable with the following command:"
 Write-Host "./Siemserva.exe --eula-approved true --tenantids $($app.TenantId) --client WamLogin --clientid $($app.AppId) --interactive-login false"
+
 
 
