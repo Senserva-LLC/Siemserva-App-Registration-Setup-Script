@@ -26,6 +26,8 @@ $requiredGraphResourceAccess.ResourceAccess += @{ Id = "314874da-47d6-4978-88dc-
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "49f0cc30-024c-4dfd-ab3e-82e137ee5431"; Type = "Scope" } # DeviceManagementRBAC.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "0e263e50-5827-48a4-b97c-d940288653c7"; Type = "Scope" } # Directory.AccessAsUser.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "06da0dbc-49e2-44d2-8312-53f166ab848a"; Type = "Scope" } # Directory.Read.All
+$requiredGraphResourceAccess.ResourceAccess += @{ Id = "5f8c59db-677d-491f-a6b8-5f174b11ec1d"; Type = "Scope" } # Group.Read.All
+$requiredGraphResourceAccess.ResourceAccess += @{ Id = "bc024368-1153-4739-b217-4326f2e966d0"; Type = "Scope" } # GroupMember.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "8f6a01e7-0391-4ee5-aa22-a3af122cef27"; Type = "Scope" } # IdentityRiskEvent.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "ea5c4ab0-5a73-4f35-8272-5d5337884e5d"; Type = "Scope" } # IdentityRiskyServicePrincipal.Read.All
 $requiredGraphResourceAccess.ResourceAccess += @{ Id = "d04bb851-cb7c-4146-97c7-ca3e71baf56c"; Type = "Scope" } # IdentityRiskyUser.Read.All
@@ -63,6 +65,7 @@ Update-MgApplication -ApplicationId $($app.Id) -PublicClient $publicClient
 Write-Host "Siemserva App Registration Complete!"
 Write-Host "You can use this App Registration with the Siemserva Executable with the following command:"
 Write-Host "./Siemserva.exe --eula-approved true --tenantids $($app.TenantId) --client WamLogin --clientid $($app.AppId) --interactive-login false"
+
 
 
 
